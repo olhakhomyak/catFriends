@@ -1,0 +1,87 @@
+<div class="current-user-profile">
+
+    <div class="photo-container row">
+        <img ng-src="{{user.picture.thumbnail}}"
+             class="img-responsive img-thumbnail rounded-circle pull-left"
+             alt="{{user.first}} {{user.last}} photo" />
+    </div>
+
+    <div class="row justify-content-end">
+        <button ng-click="changeMode()"
+                ng-if="editMode"
+                class="btn btn-sm edit-btn">
+            {{contentConstants.BTN.SAVE}} <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        </button>
+        <button ng-click="changeMode()"
+                ng-if="!editMode"
+                class="btn btn-sm edit-btn">
+            {{contentConstants.BTN.EDIT}} <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
+    </div>
+    <br>
+
+    <form ng-if="editMode" class="user-info-container" novalidate>
+        <div class="row">
+            <input type="text"
+                   ng-model="user.first"
+                   class="form-control border-right-0 col-5"
+                   placeholder="{{contentConstants.PROFILE.PLACEHOLDER.FIRST}}">
+            <input type="text"
+                   ng-model="user.last"
+                   class="form-control border-left-0 col-5"
+                   placeholder="{{contentConstants.PROFILE.PLACEHOLDER.LAST}}">
+        </div>
+        <br>
+        <div class="row">
+            <label for="born-date" class="col-10">{{contentConstants.PROFILE.BORN}}</label>
+            <input type="text"
+                   ng-model="user.born"
+                   class="form-control col-10"
+                   id="born-date"
+                   placeholder="{{contentConstants.PROFILE.PLACEHOLDER.BIRH_DATE}}">
+        </div>
+        <br>
+        <div class="row">
+            <label for="gender" class="col-10">{{contentConstants.PROFILE.GENDER}}</label>
+            <select name="gender" id="gender" ng-model="user.gender" class="col-10 form-control">
+                <option selected="{{user.gender}}" value="{{contentConstants.PROFILE.MALE}}">{{contentConstants.PROFILE.MALE}}</option>
+                <option selected="{{user.gender}}" value="{{contentConstants.PROFILE.FEMALE}}">{{contentConstants.PROFILE.FEMALE}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="row">
+            <label for="phone" class="col-10">{{contentConstants.PROFILE.PHONE}}</label>
+            <input type="tel"
+                   ng-model="user.phone"
+                   class="form-control col-10"
+                   id="phone"
+                   placeholder="{{contentConstants.PROFILE.PLACEHOLDER.PHONE_EXMPL}}">
+        </div>
+        <br>
+        <div class="row">
+            <label for="email" class="col-10">{{contentConstants.PROFILE.EMAIL}}</label>
+            <input type="email"
+                   ng-model="user.email"
+                   class="form-control col-10"
+                   id="email"
+                   required
+                   placeholder="{{contentConstants.PROFILE.PLACEHOLDER.EMAIL_EXMPL}}">
+        </div>
+    </form>
+
+    <div ng-if="!editMode" class="user-info-container">
+        <div class="user-data">{{user.first}} {{user.last}}</div>
+        <br>
+        <div>{{contentConstants.PROFILE.BORN}}</div>
+        <div class="user-data">{{user.born}}</div>
+        <br>
+        <div>{{contentConstants.PROFILE.GENDER}}</div>
+        <div class="user-data">{{user.gender}}</div>
+        <br>
+        <div>{{contentConstants.PROFILE.PHONE}}</div>
+        <div class="user-data">{{user.phone}}</div>
+        <br>
+        <div>{{contentConstants.PROFILE.EMAIL}}</div>
+        <div class="user-data">{{user.email}}</div>
+    </div>
+</div>

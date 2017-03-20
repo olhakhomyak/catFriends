@@ -1,0 +1,155 @@
+@import "_variables";
+@import "_mixins";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-size: $font-size;
+  padding: 20px;
+  background: $blue-bg; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($blue-bg, $lightblue-bg); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($blue-bg, $lightblue-bg); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($blue-bg, $lightblue-bg); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($blue-bg, $lightblue-bg); /* Standard syntax (must be last) */
+  color: $primary-black-txt;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  #wrapper {
+    min-height: 100%;
+    padding: 50px 20px;
+    margin-bottom: 40px;
+    background-color: $white;
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.25);
+
+    .page-header {
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+      font-size: 2rem;
+
+      .title {
+        cursor: pointer;
+        &:hover {
+          .blue-bg {
+            background-color: $highlight-orange-txt;
+          }
+          .white-bg {
+            color: $highlight-orange-txt;
+          }
+        }
+      }
+
+      .blue-bg {
+        @include blue-bg;
+        padding: 5px;
+      }
+
+      .white-bg {
+        color: $primary-blue-txt;
+        cursor: pointer;
+      }
+    }
+
+    .page-navigation {
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      .nav-btn {
+        @include default-text;
+        position:relative;
+        text-decoration:none;
+        border: none;
+        font-size: 1.5rem;
+        -webkit-transition: all 800ms ease-in-out;
+        -moz-transition: all 800ms ease-in-out;
+        -o-transition: all 800ms ease-in-out;
+        transition: all 800ms ease-in-out;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:after {
+          display:block;
+          content: '';
+          border-bottom: solid 2px $highlight-orange-txt;
+          transform: scaleX(0);
+          transition: transform 500ms ease-in-out;
+          transform-origin:100% 50%;
+        }
+      }
+
+    }
+
+    .current-user-profile {
+      border-right: 1px solid $tinted-grey-txt;
+      padding-right: 10px;
+
+      .photo-container {
+        img {
+          height: 200px;
+          width: 200px;
+        }
+      }
+
+      .user-info-container {
+
+        input {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            border-bottom: 1px solid $primary-black-txt;
+            border-radius: 0;
+
+          &:focus {
+            border-color: $primary-blue-txt;
+            -webkit-box-shadow:0 1px 0 $lightblue-bg;
+            -moz-box-shadow:0 1px 0 $lightblue-bg;
+            box-shadow:0 1px 0 $lightblue-bg;;
+          }
+        }
+
+        select {
+          height: 1.25rem;
+          border: none;
+          border-bottom: 1px solid $primary-black-txt;
+          border-radius: 0;
+          -webkit-appearance: none;
+        }
+
+        br+div {
+          cursor: pointer;
+        }
+
+        .user-data {
+          font-size: 1.5rem;
+          color: $tinted-grey-txt;
+          cursor: pointer;
+        }
+
+        .form-control {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      .edit-btn {
+       @include blue-bg;
+        margin-right: 20px;
+      }
+    }
+
+    .friends-section {
+      padding-left: 50px;
+      .title {
+        @include default-text;
+      }
+    }
+  }
+}

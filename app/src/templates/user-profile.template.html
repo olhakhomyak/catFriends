@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12">
+            <navigation-buttons></navigation-buttons>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="offset-md-1 col-md-3">
+            <current-user></current-user>
+        </div>
+
+        <div class="col-md-7">
+            <div class="row">
+                <friend-section
+                    ng-repeat="friend in user.friends"
+                    friend="friend"
+                    class="col-md-6"
+                ></friend-section>
+            </div>
+        </div>
+    </div>
+</div>

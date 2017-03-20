@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="catsApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="catsApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="catsApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="catsApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CatFriends</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/dependencies_style.min.css">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+<div class="container-fluid" id="wrapper">
+
+  <header class="page-header">
+    <div class="title d-inline-block">
+      <span class="white-bg">Cat</span> <span class="blue-bg">Friends</span>
+    </div>
+    <img src="http://146.185.137.61:3000/images/logo.png" width="30" height="30" alt="">
+  </header>
+
+  <content>
+    <div ng-view></div>
+  </content>
+
+</div>
+
+  <script src="./scripts/all_dependencies.js"></script>
+  <script src="./scripts/all.js"></script>
+
+</body>
+</html>
