@@ -7,16 +7,21 @@
     </div>
 
     <div class="row">
-        <div class="offset-md-1 col-md-3">
+        <div class="offset-1 col-md-3 col-lg-2">
             <current-user></current-user>
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-7 col-lg-8">
+            <div class="row">
+                <h4 class="friends-section-title">
+                    {{user.first}}'s friends
+                </h4>
+            </div>
             <div class="row">
                 <friend-section
                     ng-repeat="friend in user.friends"
                     friend="friend"
-                    class="col-md-6"
+                    class="col-md-6 col-lg-4"
                 ></friend-section>
             </div>
         </div>

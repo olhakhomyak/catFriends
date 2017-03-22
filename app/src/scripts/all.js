@@ -56,6 +56,15 @@
                         born: "22/10/1991",
                         gender: "Male",
                         phone: 241412421,
+                        email: "jdoe@mail.com"},
+                    {first: "three",
+                        last: "User",
+                        picture: {
+                            thumbnail: "http://i2.kym-cdn.com/photos/images/newsfeed/000/406/325/b31.jpg"
+                        },
+                        born: "22/10/1991",
+                        gender: "Male",
+                        phone: 241412421,
                         email: "jdoe@mail.com"}
                 ]
             };
